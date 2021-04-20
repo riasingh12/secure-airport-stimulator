@@ -1,9 +1,4 @@
-/*
-*	Admin: Arvind Krishna
-*	github - github.com/ArvindAROO
-*	type - c_project
-* 	client side file of the project
-*/
+
 
 //All the includes
 #include<stdio.h>
@@ -19,12 +14,12 @@ int main(void){
 	//And defining the variables
     airport AirPort;
     int i, numOfPlanes, presentTime, TotalTime ;
-    double expectarrive, expectdepart ;
+    
     plane temp;
     //Initializing the airport
     initializeAirport(&AirPort);
 	//Starting
-    start(&TotalTime, &expectarrive, &expectdepart);
+    start(&TotalTime);
 	//Outer for loop manages the number of iterations, which is a count of time
 	//Effectively, 1 iteration is 1 unit of time
     for(presentTime = 1 ; presentTime <= TotalTime ; presentTime++){
@@ -53,7 +48,7 @@ int main(void){
         for(i = 0 ; i < numOfPlanes ; i++){
         	//This is generation of planes
         	//of course random number of times
-        	//For every iteration a new plane will be genarate
+        	//For every iteration a new plane will be generate
         	//and added to the landing queue
             createNewPlane(&AirPort, presentTime, ARRIVE);
 			airportAddToQueue(&AirPort, ARRIVE);
@@ -88,8 +83,6 @@ int main(void){
     Result(&AirPort, TotalTime);
 	//clearing the screen
     clrscr();
-    printf("Thanks\nBy,\n\tArvind Krishna\a");
-    printf("\ngithub.com/ArvindAROO\n\n");
-    //Displaying creator info
+    
 	return 0;
 }
