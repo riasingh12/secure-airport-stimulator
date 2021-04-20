@@ -1,9 +1,3 @@
-/* 
-*	Admin: Arvind Krishna
-*	github - github.com/ArvindAROO
-*	type - c_project
-* 	header file of the project
-*/
 
 //defining global constants
 #define MAX_POSSIBLE 3
@@ -44,7 +38,7 @@ int sizeOfQueue(queue);
 int isEmptyQueue(queue);
 int isFullQueue(queue);
 void initializeAirport(airport*);
-void start(int*, double*, double*);
+void start(int*);
 void createNewPlane(airport*, int, int);
 void refuseLand(airport*);
 void land(airport*, plane, int);

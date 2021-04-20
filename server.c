@@ -1,9 +1,4 @@
-/* 
-*	Admin: Arvind Krishna
-*	github - github.com/ArvindAROO
-*	type - c_project
-*	server file for the project
-*/
+
 
 //All the includes
 #include<stdio.h>
@@ -134,7 +129,7 @@ void initializeAirport(airport *airPort){
     airPort->waitForLanding = airPort->waitForTakeoff = 0 ;
 }
 
-void start(int *totalTime, double *expectArrive, double *expectDepart){
+void start(int *totalTime){
 	//this functions is the submain function which just
 	//starts the whole process.
     int flag = 1;
@@ -146,27 +141,25 @@ void start(int *totalTime, double *expectArrive, double *expectDepart){
     //since the random number generator in c is bad version of pseudo random generator
     //it will generate the same pattern each time unless we explicitly seed it
     seed();
-    while(flag){
-    	//making sure that the values we take are not meaning less
+    
+    //making sure that the values we take are not meaning less
     	//we use a while loop and break out if everythings fine
         printf("How many units of time will the simulation run?");
     	scanf("%lf", &temp);
     	*totalTime = temp/1;
     	//If the input by mistake is given as a float for total time
     	//The above lines handle that
-		printf("\nExpected number of arrivals per unit time?>> ");
-        scanf(" %lf", expectArrive);
-        printf("\nExpected number of departures per unit time?>> ");
-        scanf(" %lf", expectDepart);
+	//	printf("\nExpected number of arrivals per unit time?>> ");
+        //scanf(" %lf", expectArrive);
+        //printf("\nExpected number of departures per unit time?>> ");
+        //scanf(" %lf", expectDepart);
         //since its mathematically meaningless to get negative values
         //we keep on taking the values as long as there are wrong values
-        if(*expectArrive < 0.0 || *expectDepart < 0.0 || *totalTime < 0){
-            printf("These numbers must not be negative.\nPlease re-enter the values\n");
-        	flag = 1;
-    	}else
-            flag = 0;
-    }
-    printf("\n%lf %lf %d\n",*expectArrive,*expectDepart,*totalTime);
+        //if(*expectArrive < 0.0 || *expectDepart < 0.0 || *totalTime < 0){
+        //   printf("These numbers must not be negative.\nPlease re-enter the values\n");
+        //	flag = 1;
+    	
+    printf("\n%d\n",*totalTime);
     printf("\n\n\n");
     return;
 }
